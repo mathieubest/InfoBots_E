@@ -10,3 +10,5 @@ push:
 	git add .
 	git commit -m "$(commit_msg)"
 	git push
+
+.PHONY: all push
