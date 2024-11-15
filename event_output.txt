@@ -1,0 +1,29 @@
+### Optimisations 
+
+# PUT THIS IS MAKE FILE
+
+const NETWORK = process.env.NETWORK || "mainnet"; // Default to mainnet if not specified
+const CONTRACT_ADDRESS = NETWORK === "testnet" 
+    ? process.env.CONTRACT_ADDRESS_TESTNET 
+    : process.env.CONTRACT_ADDRESS_MAINNET;
+
+```
+NETWORK=testnet npx ts-node [tracker.ts](http://_vscodecontentref_/0)
+```
+
+NETWORK=mainnet npx ts-node [tracker.ts](http://_vscodecontentref_/1)
+
+# Website
+https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48#code
+
+
+### NOTES 
+            Output the amount in human-readable format
+            const amount0Human = ethers.formatUnits(amount0, 6); // USDC
+            const amount1Human = ethers.formatUnits(amount1, 18); // WETH
+
+            console.log("Amout0 swapped:", amount0.toString());
+            console.log("Amout1 swapped:", amount1.toString());
+            console.log("Amount1 swapped from USDC to ETH (human-readable):", amount0Human);
+            console.log("Amount1 swapped from ETH to USDC (human-readable):", amount1Human);
+            console.log(`Tx Url: https://etherscan.io/tx/${event.log.transactionHash}`);
