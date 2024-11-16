@@ -14,11 +14,12 @@ config();
 const BOLD = "\x1b[1m";
 const RED_BOLD = "\x1b[1m\x1b[31m%s\x1b[0m";
 const GREEN_BOLD = "\x1b[1m\x1b[32m%s\x1b[0m";
+const YELLOW_BOLD = "\x1b[1m\x1b[33m%s\x1b[0m";
 const GREEN = "\x1b[32m";
 const RED = "\x1b[31m";
 const RESET = "\x1b[0m";
 
-// ABI to fetch the events from the pool
+// ABI to fetch the events from the pool 
 const ABI = require("./abi-pool.json");
 const ERC20_ABI = require("./abi-erc20.json");
 const API_URL = process.env.ETH_MAINNET_ALCHEMY_API_URL as string;
@@ -120,7 +121,7 @@ async function main() {
                 contractReceivedUSDC(amount0Human, amount1Human, amount0, amount1, event);
             }
 
-            if (count == maxCount) {
+            if (maxCount != 1 && count == maxCount) {
                 displaySummary(count);
                 process.exit(0);
             }
